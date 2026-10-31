@@ -1,66 +1,75 @@
 {
-  "schema": "weekstart.stacks.v1",
-  "note": "10 slots. Fill slug + title, set status to ready when the stack folder is in stacks/<slug>/.",
+  "name": "weekstart-starter-pack",
   "stacks": [
     {
-      "slot": 1,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "fail-closed-tool-gate",
+      "title": "Fail-Closed Tool Gate",
+      "what_it_is": "A small check that runs before your agent calls any tool.",
+      "what_it_does": "Stops the call when a field is missing or a permission answer is unknown, instead of guessing and letting it through.",
+      "path": "stacks/fail-closed-tool-gate/"
     },
     {
-      "slot": 2,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "ask-before-you-delete",
+      "title": "Ask a Person Before Pay or Delete",
+      "what_it_is": "A short rule list for the steps that always go to a person.",
+      "what_it_does": "Makes payments, deletes and other can't-undo steps wait for a human yes, whatever the agent or any check says.",
+      "path": "stacks/ask-before-you-delete/"
     },
     {
-      "slot": 3,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "pin-tool-definitions",
+      "title": "Pin Your Tool Definitions",
+      "what_it_is": "A fingerprint of each tool you approved.",
+      "what_it_does": "Notices when a tool's name, description or inputs change after you approved it, and asks again instead of running.",
+      "path": "stacks/pin-tool-definitions/"
     },
     {
-      "slot": 4,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "tool-results-are-data",
+      "title": "Tool Results Are Data, Not Orders",
+      "what_it_is": "A system rule plus a cleanup step for anything a tool returns.",
+      "what_it_does": "Treats web pages, files and tool replies as information to check, so a fetched page can't take over your agent.",
+      "path": "stacks/tool-results-are-data/"
     },
     {
-      "slot": 5,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "said-vs-did-log",
+      "title": "Two Logs: What Tools Said, What Your Agent Did",
+      "what_it_is": "Two separate records for every run.",
+      "what_it_does": "Lets you prove afterwards whether a bad tool reply turned into an action, and keeps secrets out of what the model sees.",
+      "path": "stacks/said-vs-did-log/"
     },
     {
-      "slot": 6,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "token-defrag",
+      "title": "Token Defrag",
+      "what_it_is": "A checklist for doing the same work with fewer tokens.",
+      "what_it_does": "Cuts what you pay every turn: keep tool lists steady, drop old tool output, fetch things once, and turn on only the tools this turn needs.",
+      "path": "stacks/token-defrag/"
     },
     {
-      "slot": 7,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "session-budget-guard",
+      "title": "Session Budget Guard",
+      "what_it_is": "A hard ceiling on how many tokens one run can use.",
+      "what_it_does": "Stops the run with a plain message when it hits the ceiling, instead of retrying forever and running up the bill.",
+      "path": "stacks/session-budget-guard/"
     },
     {
-      "slot": 8,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "prompts-in-git",
+      "title": "Prompts in Git, Keys Out",
+      "what_it_is": "A folder layout, ignore list and commit check for your prompts.",
+      "what_it_does": "Lets you review and roll back prompt changes like code, and blocks a commit that contains a key.",
+      "path": "stacks/prompts-in-git/"
     },
     {
-      "slot": 9,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "retry-with-a-key",
+      "title": "Retry With a Key",
+      "what_it_is": "One key per real-world write, reused on every retry.",
+      "what_it_does": "Stops a timeout-and-retry from creating a second charge, ticket or pull request.",
+      "path": "stacks/retry-with-a-key/"
     },
     {
-      "slot": 10,
-      "slug": null,
-      "title": null,
-      "status": "slot"
+      "slug": "pin-model-ids",
+      "title": "Pin Your Model IDs",
+      "what_it_is": "An exact model name in your config, plus a check that enforces it.",
+      "what_it_does": "Keeps your agent on the model you tested, so a vendor default or a quiet redirect doesn't change it without you noticing.",
+      "path": "stacks/pin-model-ids/"
     }
   ]
 }

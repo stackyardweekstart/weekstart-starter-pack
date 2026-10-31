@@ -1,21 +1,20 @@
-# Stack name
+# Stack Title
 
-One sentence: what this stack does.
+**The problem:** One or two sentences on what goes wrong without this.
 
-## Who it's for
+**What it does:** One or two sentences on what this stack changes.
 
-## What you need
+## Steps
 
-- Accounts and tools (link to official docs)
-- Environment variables (names only): `EXAMPLE_API_KEY`
+1. First step.
+2. Second step.
+3. Third step.
 
-## Setup
+## Copy-paste config
 
-1. Step one
-2. Step two
+```yaml
+# example config (your own format)
+key: value
+```
 
-## What it does with your data
-
-Where prompts, outputs and logs are stored, and for how long.
-
-## Known limits
+Put any snippet next to this README and say what it is here. Never include real keys: use variable names only.

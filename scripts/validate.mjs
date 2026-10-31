@@ -31,6 +31,8 @@ function walk(dir, out = []) {
 // 1) every JSON file parses; nothing looks like a real key
 for (const f of walk(ROOT)) {
   if (f.endsWith(".json")) readJson(f);
+  if (!f.endsWith("validate.mjs") && (/NOTES-for-review|review[-_ ]?notes|(^|\/)REVIEW-[^/]*\.md$|STAMP-NOTES/i.test(rel(f)) || /members\//.test(readFileSync(f, "utf8"))))
+    err(`${rel(f)}: internal review notes or member paths must not ship`);
   if (/\.(md|json|ya?ml|txt|js|mjs|ts|py|sh|toml|env|example)$/.test(f) && SECRET.test(readFileSync(f, "utf8")))
     err(`${rel(f)}: looks like it contains a real API key or token. Use the variable name only.`);
 }
@@ -77,9 +79,9 @@ for (const d of readdirSync(join(ROOT, "stacks"))) {
   if (!existsSync(readme)) { err(`${at}: missing README.md`); continue; }
   const text = readFileSync(readme, "utf8");
   if (!/^# \S/m.test(text)) err(`${at}/README.md: needs a "# Title" line`);
-  if (!/\*\*What it fixes:\*\*/.test(text) || !/\*\*Who it's for:\*\*/.test(text))
-    err(`${at}/README.md: needs "**What it fixes:**" and "**Who it's for:**"`);
-  for (const h of ["Example", "Steps", "Copy-paste"]) if (!new RegExp(`^## ${h}`, "m").test(text)) err(`${at}/README.md: needs a "## ${h}" section`);
+  if (!/\*\*What it fixes:\*\*/.test(text) || !/\*\*Who it's for:\*\*/.test(text) || !/^## Example/m.test(text))
+    err(`${at}/README.md: needs "**What it fixes:**", "**Who it's for:**" and "## Example"`);
+  for (const h of ["Steps", "Copy-paste"]) if (!new RegExp(`^## ${h}`, "m").test(text)) err(`${at}/README.md: needs a "## ${h}" section`);
   // every snippet file the README names must exist, and every snippet must be named
   const files = readdirSync(base).filter((f) => f !== "README.md");
   for (const f of files) if (!text.includes(f)) warn(`${at}: ${f} is not mentioned in README.md`);

@@ -2,7 +2,7 @@
 
 **What it is:** 10 small habits for people who run AI agents, each with a short guide and a copy-paste prompt or snippet.
 **Who it's for:** Solo operators and small teams whose agents call tools, spend money, or write to real systems.
-**What it does:** Helps your agents stop on unknowns, ask before risky steps, retry safely, and spend less.
+**What it does:** Helps your agents stop on unknowns, ask before risky steps, retry safely, spend less, stay in a box, and produce changes you can actually review.
 
 Every stack is a pattern, not vendor news, so it should stay useful for a long time. The snippets are patterns to adapt, not finished libraries. Read them before you run them.
 
@@ -25,9 +25,9 @@ Every stack is a pattern, not vendor news, so it should stay useful for a long t
 | [Said vs. Did Log](stacks/said-vs-did-log/) | Two separate records for every run. | Lets you prove afterwards whether a bad tool reply turned into an action, and keeps secrets out of what the model sees. |
 | [Token Defrag](stacks/token-defrag/) | A checklist for doing the same work with fewer tokens. | Cuts what you pay every turn: keep tool lists steady, drop old tool output, fetch things once, and turn on only the tools this turn needs. |
 | [Session Budget Guard](stacks/session-budget-guard/) | A hard ceiling on how many tokens one run can use. | Stops the run with a plain message when it hits the ceiling, instead of retrying forever and running up the bill. |
-| [Prompts in Git, Keys Out](stacks/prompts-in-git/) | A folder layout, ignore list and commit check for your prompts. | Lets you review and roll back prompt changes like code, and blocks a commit that contains a key. |
+| [Run It in a Box](stacks/run-it-in-a-box/) | A throwaway container setup plus a check for the command that starts it. | Keeps your agent away from your own files, keys and network: no host folders, no network by default, and a workdir that vanishes on exit. |
 | [Retry With a Key](stacks/retry-with-a-key/) | One key per real-world write, reused on every retry. | Stops a timeout-and-retry from creating a second charge, ticket or pull request. |
-| [Pin Your Model IDs](stacks/pin-model-ids/) | An exact model name in your config, plus a check that enforces it. | Keeps your agent on the model you tested, so a vendor default or a quiet redirect doesn't change it without you noticing. |
+| [Review in Small Slices](stacks/review-in-small-slices/) | A diff budget, a review checklist and a small script that splits a change into slices. | Turns an agent's too-big change into pieces you can really read, with risky files first, so approve means someone checked it. |
 
 ## The machine-readable list
 

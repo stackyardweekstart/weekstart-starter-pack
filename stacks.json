@@ -51,11 +51,11 @@
       "path": "stacks/session-budget-guard/"
     },
     {
-      "slug": "prompts-in-git",
-      "title": "Prompts in Git, Keys Out",
-      "what_it_is": "A folder layout, ignore list and commit check for your prompts.",
-      "what_it_does": "Lets you review and roll back prompt changes like code, and blocks a commit that contains a key.",
-      "path": "stacks/prompts-in-git/"
+      "slug": "run-it-in-a-box",
+      "title": "Run It in a Box",
+      "what_it_is": "A throwaway container setup plus a check for the command that starts it.",
+      "what_it_does": "Keeps your agent away from your own files, keys and network: no host folders, no network by default, and a workdir that vanishes on exit.",
+      "path": "stacks/run-it-in-a-box/"
     },
     {
       "slug": "retry-with-a-key",
@@ -65,11 +65,11 @@
       "path": "stacks/retry-with-a-key/"
     },
     {
-      "slug": "pin-model-ids",
-      "title": "Pin Your Model IDs",
-      "what_it_is": "An exact model name in your config, plus a check that enforces it.",
-      "what_it_does": "Keeps your agent on the model you tested, so a vendor default or a quiet redirect doesn't change it without you noticing.",
-      "path": "stacks/pin-model-ids/"
+      "slug": "review-in-small-slices",
+      "title": "Review in Small Slices",
+      "what_it_is": "A diff budget, a review checklist and a small script that splits a change into slices.",
+      "what_it_does": "Turns an agent's too-big change into pieces you can really read, with risky files first, so approve means someone checked it.",
+      "path": "stacks/review-in-small-slices/"
     }
   ]
 }

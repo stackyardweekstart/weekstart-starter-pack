@@ -57,7 +57,7 @@ def main():
     files = parse(text)
     total = sum(f[1] for f in files)
     parts = slices(files, max_lines)
-    print(f"{len(files)} files, {total} changed lines -> {len(parts)} slices (max {max_lines} lines each)")
+    print(f"{len(files)} file{'' if len(files)==1 else 's'}, {total} changed lines -> {len(parts)} slice{'' if len(parts)==1 else 's'} (max {max_lines} lines each)")
     for i, part in enumerate(parts, 1):
         size = sum(f[1] for f in part)
         tag = "RISKY, review first" if part[0][2] else "normal"

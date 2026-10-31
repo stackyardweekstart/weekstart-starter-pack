@@ -9,6 +9,8 @@
 Before: the usual quick start hands the agent your home folder and a key.
 After: `python3 box_check.py` checks the command before the agent gets it.
 
+Run `python3 box_check.py` with no arguments to see a demo. The first sample fails on purpose, and the demo still exits 0. A real command that fails exits 1.
+
 ```text
 $ docker run -it -v $HOME:/work -e API_KEY my-agent
 FAIL

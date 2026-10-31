@@ -74,6 +74,8 @@ def main(argv):
         "docker run -it -v $HOME:/work -e API_KEY my-agent",
         "docker run --rm --network none --read-only --tmpfs /work -w /work my-agent",
     ]
+    if not argv:
+        print("Demo: the first sample is meant to FAIL\n")
     worst = 0
     for cmd in samples:
         parts = shlex.split(cmd) if isinstance(cmd, str) else cmd
@@ -89,7 +91,7 @@ def main(argv):
         else:
             print("PASS: no host folders, no network, thrown away on exit")
         print()
-    return worst
+    return worst if argv else 0
 
 
 if __name__ == "__main__":

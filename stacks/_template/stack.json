@@ -1,0 +1,16 @@
+{
+  "schema": "weekstart.stack.v1",
+  "slug": "_template",
+  "title": "Stack name",
+  "summary": "One sentence: what this stack does.",
+  "models": [
+    { "provider": "example", "model": "example-model-2026-01-01", "role": "main" }
+  ],
+  "tools": [
+    { "name": "example-tool", "docs": "https://example.com/docs", "can_write": false }
+  ],
+  "env": ["EXAMPLE_API_KEY"],
+  "limits": { "max_steps": 20, "timeout_seconds": 120, "retries": 2, "monthly_budget_usd": 25 },
+  "data": { "stores_prompts": false, "retention": "none" },
+  "human_approval": ["delete", "pay", "send", "publish"]
+}

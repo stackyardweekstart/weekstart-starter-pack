@@ -1,0 +1,66 @@
+{
+  "schema": "weekstart.stacks.v1",
+  "note": "10 slots. Fill slug + title, set status to ready when the stack folder is in stacks/<slug>/.",
+  "stacks": [
+    {
+      "slot": 1,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 2,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 3,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 4,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 5,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 6,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 7,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 8,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 9,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    },
+    {
+      "slot": 10,
+      "slug": null,
+      "title": null,
+      "status": "slot"
+    }
+  ]
+}

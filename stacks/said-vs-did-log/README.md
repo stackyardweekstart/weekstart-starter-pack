@@ -1,8 +1,13 @@
-# Two Logs: What Tools Said, What Your Agent Did
+# Said vs. Did Log
 
-**The problem:** If you keep one mixed log, you can't tell whether a poisoned tool reply became a real action. And if a secret reaches the model before you scrub it, it's already in the logs.
+**What it fixes:** Lets you prove whether a bad tool reply turned into a real action, and keeps secrets away from the model.
 
-**What it does:** Keeps two records and scrubs secrets before the model sees them.
+**Who it's for:** Anyone who has to explain afterwards what their agent did and why.
+
+## Example
+
+Before: one mixed log, and a reply containing `contact ops@example.com` goes to the model as-is.
+After: `tool_said("run-1", "crm", "contact ops@example.com")` returns `contact [redacted]`, writes it to `tools_said.jsonl`, and `agent_did(...)` writes actions to `agent_did.jsonl` under the same run id.
 
 ## Steps
 

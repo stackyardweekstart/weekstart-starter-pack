@@ -1,8 +1,13 @@
 # Prompts in Git, Keys Out
 
-**The problem:** A prompt that only lives in a vendor dashboard can't be reviewed or rolled back. A key pasted into a prompt file stays in history for good.
+**What it fixes:** Makes prompt changes reviewable and undoable, and blocks commits that contain a key.
 
-**What it does:** Puts prompts in your repo, keeps local secret files out, and scans each commit for keys.
+**Who it's for:** Anyone whose prompts live only in a dashboard or a loose file.
+
+## Example
+
+Before: a prompt is edited in a dashboard with no history, and a pasted key gets committed.
+After: the prompt lives in `prompts/`, changes show up in review, and the secret scan below refuses the commit with the key in it.
 
 ## Steps
 

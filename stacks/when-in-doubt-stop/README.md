@@ -1,8 +1,18 @@
-# Fail-Closed Tool Gate
+# When in Doubt, Stop
 
-**The problem:** When a required field is missing or a permission answer comes back as something your code doesn't recognize, a "helpful" default lets the call run anyway. That's how unknown tools run.
+**What it fixes:** Stops a tool call when a field is missing or a permission answer is one your code doesn't recognize.
 
-**What it does:** Missing, unparseable or unknown means **stop**, not "carry on."
+**Who it's for:** Anyone whose agent calls tools that can change real things.
+
+## Example
+
+Before: the permission check returns `allow_with_conditions`, a default treats it as yes, and the call runs.
+After: `python3 gate.py`
+
+```text
+refused: unknown verdict 'allow_with_conditions'
+False
+```
 
 ## Steps
 

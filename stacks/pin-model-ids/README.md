@@ -1,8 +1,19 @@
 # Pin Your Model IDs
 
-**The problem:** If your config says "latest" or leaves the model blank, the vendor decides what you run. Nothing errors. Output, tool habits, speed and cost can all shift.
+**What it fixes:** Keeps your agent on the model you tested instead of whatever the vendor's default is today.
 
-**What it does:** Every production agent names an exact model in a file you keep in version control, and a check fails the build if one doesn't.
+**Who it's for:** Anyone running agents in production.
+
+## Example
+
+Before: config says `model: latest`, and the model can change under you.
+After: `./check_models.sh config/` fails the build
+
+```text
+Unpinned model found:
+config/a.yaml:1:model: latest
+```
+With an exact model name, it prints `All models pinned.`
 
 ## Steps
 

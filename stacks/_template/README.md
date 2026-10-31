@@ -1,8 +1,13 @@
 # Stack Title
 
-**The problem:** One or two sentences on what goes wrong without this.
+**What it fixes:** One sentence on the problem this stops.
 
-**What it does:** One or two sentences on what this stack changes.
+**Who it's for:** One sentence on who should use it.
+
+## Example
+
+Before: what goes wrong today.
+After: what happens with this stack (for example `python3 snippet.py`).
 
 ## Steps
 
@@ -10,11 +15,11 @@
 2. Second step.
 3. Third step.
 
-## Copy-paste config
+## Copy-paste
 
 ```yaml
 # example config (your own format)
 key: value
 ```
 
-Put any snippet next to this README and say what it is here. Never include real keys: use variable names only.
+Put any snippet next to this README and name it here. Never include real keys: use variable names only.

@@ -2,15 +2,15 @@
   "name": "weekstart-starter-pack",
   "stacks": [
     {
-      "slug": "fail-closed-tool-gate",
-      "title": "Fail-Closed Tool Gate",
+      "slug": "when-in-doubt-stop",
+      "title": "When in Doubt, Stop",
       "what_it_is": "A small check that runs before your agent calls any tool.",
       "what_it_does": "Stops the call when a field is missing or a permission answer is unknown, instead of guessing and letting it through.",
-      "path": "stacks/fail-closed-tool-gate/"
+      "path": "stacks/when-in-doubt-stop/"
     },
     {
       "slug": "ask-before-you-delete",
-      "title": "Ask a Person Before Pay or Delete",
+      "title": "Ask Before You Delete",
       "what_it_is": "A short rule list for the steps that always go to a person.",
       "what_it_does": "Makes payments, deletes and other can't-undo steps wait for a human yes, whatever the agent or any check says.",
       "path": "stacks/ask-before-you-delete/"
@@ -31,7 +31,7 @@
     },
     {
       "slug": "said-vs-did-log",
-      "title": "Two Logs: What Tools Said, What Your Agent Did",
+      "title": "Said vs. Did Log",
       "what_it_is": "Two separate records for every run.",
       "what_it_does": "Lets you prove afterwards whether a bad tool reply turned into an action, and keeps secrets out of what the model sees.",
       "path": "stacks/said-vs-did-log/"

@@ -1,6 +1,6 @@
 # Weekstart Starter Pack
 
-**What it is:** 10 small, ready-to-use habits for people who run AI agents, each with a short guide and a copy-paste prompt or snippet.
+**What it is:** 10 small habits for people who run AI agents, each with a short guide and a copy-paste prompt or snippet.
 **Who it's for:** Solo operators and small teams whose agents call tools, spend money, or write to real systems.
 **What it does:** Helps your agents stop on unknowns, ask before risky steps, retry safely, and spend less.
 
@@ -18,11 +18,11 @@ Every stack is a pattern, not vendor news, so it should stay useful for a long t
 
 | Stack | What it is | What it does |
 |---|---|---|
-| [Fail-Closed Tool Gate](stacks/fail-closed-tool-gate/) | A small check that runs before your agent calls any tool. | Stops the call when a field is missing or a permission answer is unknown, instead of guessing and letting it through. |
-| [Ask a Person Before Pay or Delete](stacks/ask-before-you-delete/) | A short rule list for the steps that always go to a person. | Makes payments, deletes and other can't-undo steps wait for a human yes, whatever the agent or any check says. |
+| [When in Doubt, Stop](stacks/when-in-doubt-stop/) | A small check that runs before your agent calls any tool. | Stops the call when a field is missing or a permission answer is unknown, instead of guessing and letting it through. |
+| [Ask Before You Delete](stacks/ask-before-you-delete/) | A short rule list for the steps that always go to a person. | Makes payments, deletes and other can't-undo steps wait for a human yes, whatever the agent or any check says. |
 | [Pin Your Tool Definitions](stacks/pin-tool-definitions/) | A fingerprint of each tool you approved. | Notices when a tool's name, description or inputs change after you approved it, and asks again instead of running. |
 | [Tool Results Are Data, Not Orders](stacks/tool-results-are-data/) | A system rule plus a cleanup step for anything a tool returns. | Treats web pages, files and tool replies as information to check, so a fetched page can't take over your agent. |
-| [Two Logs: What Tools Said, What Your Agent Did](stacks/said-vs-did-log/) | Two separate records for every run. | Lets you prove afterwards whether a bad tool reply turned into an action, and keeps secrets out of what the model sees. |
+| [Said vs. Did Log](stacks/said-vs-did-log/) | Two separate records for every run. | Lets you prove afterwards whether a bad tool reply turned into an action, and keeps secrets out of what the model sees. |
 | [Token Defrag](stacks/token-defrag/) | A checklist for doing the same work with fewer tokens. | Cuts what you pay every turn: keep tool lists steady, drop old tool output, fetch things once, and turn on only the tools this turn needs. |
 | [Session Budget Guard](stacks/session-budget-guard/) | A hard ceiling on how many tokens one run can use. | Stops the run with a plain message when it hits the ceiling, instead of retrying forever and running up the bill. |
 | [Prompts in Git, Keys Out](stacks/prompts-in-git/) | A folder layout, ignore list and commit check for your prompts. | Lets you review and roll back prompt changes like code, and blocks a commit that contains a key. |

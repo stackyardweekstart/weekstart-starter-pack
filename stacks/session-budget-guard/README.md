@@ -1,8 +1,17 @@
 # Session Budget Guard
 
-**The problem:** An agent loop with no ceiling keeps apologizing and retrying. A per-reply limit is not a per-run total, so mixing them up still burns money.
+**What it fixes:** Stops one run from retrying forever and running up the bill.
 
-**What it does:** Your own run-level ceiling. When the next call would go over, the guard refuses and shows a person a plain message.
+**Who it's for:** Anyone running agent loops unattended.
+
+## Example
+
+Before: a loop keeps calling the model with no total limit.
+After: `python3 guard.py` (1,000-token ceiling, 300 per turn)
+
+```text
+Run budget hit. Review before continuing. {'used': 900}
+```
 
 ## Steps
 

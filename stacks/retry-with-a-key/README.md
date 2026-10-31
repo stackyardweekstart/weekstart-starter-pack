@@ -1,8 +1,13 @@
 # Retry With a Key
 
-**The problem:** Your agent sends a write, the network times out, and it retries. The first one may have worked. A retry without the same key is a second write.
+**What it fixes:** Stops a timeout-and-retry from creating a second charge, ticket or pull request.
 
-**What it does:** One key per real-world action. Retries reuse it. A local record stops repeats when the service has no key of its own.
+**Who it's for:** Anyone whose agent writes to payments, tickets, repos or other real systems.
+
+## Example
+
+Before: the write times out, the agent retries with a fresh request, and you get two charges.
+After: `mutating_call(store, "refund-42", body, call_fn)` keeps the same key on the retry, and once it succeeds a second call returns the saved receipt instead of writing again.
 
 ## Steps
 
@@ -17,3 +22,5 @@
 ## Copy-paste
 
 `write_key.py` in this folder: mint, reuse, and check-before-create in one small file.
+
+Want the full version with more cases? It's on https://stackyard.fyi.

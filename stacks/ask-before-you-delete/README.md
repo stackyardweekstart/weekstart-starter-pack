@@ -1,8 +1,17 @@
-# Ask a Person Before Pay or Delete
+# Ask Before You Delete
 
-**The problem:** "Don't delete prod" written in a prompt is not a control. An automatic check that later says yes is not a human checkpoint either.
+**What it fixes:** Stops payments, deletes and other can't-undo steps from running without a person saying yes.
 
-**What it does:** A fixed list of risky steps waits for a person. The list lives in your code, not in the prompt.
+**Who it's for:** Anyone letting an agent touch money, data or access.
+
+## Example
+
+Before: the agent decides a `delete` on `customers` is fine and runs it.
+After: `python3 must_ask.py` (nobody answered, so it waits)
+
+```text
+stopped: waiting for a person
+```
 
 ## Steps
 

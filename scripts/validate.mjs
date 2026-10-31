@@ -35,6 +35,16 @@ for (const f of walk(ROOT)) {
     err(`${rel(f)}: looks like it contains a real API key or token. Use the variable name only.`);
 }
 
+// 1b) optional private blocklist: --deny <file> (one regex per line). Nothing matching may appear in the repo.
+const di = process.argv.indexOf("--deny");
+if (di > 0) {
+  const pats = readFileSync(process.argv[di + 1], "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
+  for (const f of walk(ROOT)) if (!f.endsWith("validate.mjs")) {
+    const t = readFileSync(f, "utf8");
+    for (const p of pats) if (new RegExp(p, "i").test(t)) err(`${rel(f)}: matches a blocked term`);
+  }
+}
+
 // 2) manifest
 const manifest = readJson(join(ROOT, "stacks.json"));
 const listed = new Set();
@@ -67,9 +77,9 @@ for (const d of readdirSync(join(ROOT, "stacks"))) {
   if (!existsSync(readme)) { err(`${at}: missing README.md`); continue; }
   const text = readFileSync(readme, "utf8");
   if (!/^# \S/m.test(text)) err(`${at}/README.md: needs a "# Title" line`);
-  if (!/\*\*The problem:\*\*/.test(text) || !/\*\*What it does:\*\*/.test(text))
-    err(`${at}/README.md: needs "**The problem:**" and "**What it does:**"`);
-  if (!/^## Steps/m.test(text)) err(`${at}/README.md: needs a "## Steps" section`);
+  if (!/\*\*What it fixes:\*\*/.test(text) || !/\*\*Who it's for:\*\*/.test(text))
+    err(`${at}/README.md: needs "**What it fixes:**" and "**Who it's for:**"`);
+  for (const h of ["Example", "Steps", "Copy-paste"]) if (!new RegExp(`^## ${h}`, "m").test(text)) err(`${at}/README.md: needs a "## ${h}" section`);
   // every snippet file the README names must exist, and every snippet must be named
   const files = readdirSync(base).filter((f) => f !== "README.md");
   for (const f of files) if (!text.includes(f)) warn(`${at}: ${f} is not mentioned in README.md`);

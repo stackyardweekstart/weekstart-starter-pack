@@ -1,8 +1,13 @@
 # Token Defrag
 
-**The problem:** Long agent runs keep paying for the same things on every turn: old tool output, whole pages pasted again and again, and tool lists that change and break the cache.
+**What it fixes:** Cuts what you pay every turn to carry old context around.
 
-**What it does:** Five habits that cut what you pay to keep context around.
+**Who it's for:** Anyone running long agent sessions who watches the token bill.
+
+## Example
+
+Before: every turn re-sends a full pasted page, old tool output, and every tool you have.
+After: fetch the page once and keep the extract, drop the old output, and turn on only this turn's tools. Same work, a smaller context each turn. Checklist below.
 
 ## Steps
 

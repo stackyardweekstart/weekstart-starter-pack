@@ -21,6 +21,6 @@ After: `mutating_call(store, "refund-42", body, call_fn)` keeps the same key on 
 
 ## Copy-paste
 
-`write_key.py` in this folder: mint, reuse, and check-before-create in one small file.
+`write_key.py` in this folder: mint, reuse, and check-before-create in one small file. `test_write_key.py` covers same-key same-payload and same-key different-payload.
 
 Want the full version with more cases? It's on https://stackyard.fyi.

@@ -9,11 +9,11 @@ def fp(payload):
 
 def mutating_call(store, intent_id, payload, call_fn):
     row = store.get(intent_id)
+    if row and row["fp"] != fp(payload):
+        raise WriteConflict("Same write key, different payload. Stop and inspect.")
     if row and row["status"] == "succeeded":
         return row["receipt"]                       # already done: don't create again
     if row and row["status"] == "pending":
-        if row["fp"] != fp(payload):
-            raise WriteConflict("Same write key, different payload. Stop and inspect.")
         key = row["key"]                            # retry: same key, same body
     else:
         key = str(uuid.uuid4())                     # first try, or a fixed request
